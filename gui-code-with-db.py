@@ -50,8 +50,8 @@ class TaxCalculatorApp:
         self.notice_page = Frame(self.root)
 
         # image paths
-        self.home_page_bg_path = PhotoImage(file=r"D:\downloads v\bgimage.png")
-        self.other_pages_bg_path = PhotoImage(file=r"D:\downloads v\bgotherpg.png")
+        self.home_page_bg_path = PhotoImage(file=r"https://github.com/nancy121205/pythonSY/blob/main/bgimage.png")
+        self.other_pages_bg_path = PhotoImage(file=r"https://github.com/nancy121205/pythonSY/blob/main/bgotherpg.png")
         
         # constructor creates UI for Pages when excecuted
         # functions for creating each pages
