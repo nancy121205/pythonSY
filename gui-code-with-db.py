@@ -50,8 +50,8 @@ class TaxCalculatorApp:
         self.notice_page = Frame(self.root)
 
         # image paths
-        self.home_page_bg_path = PhotoImage(file=r"https://github.com/nancy121205/pythonSY/blob/main/bgimage.png")
-        self.other_pages_bg_path = PhotoImage(file=r"https://github.com/nancy121205/pythonSY/blob/main/bgotherpg.png")
+        self.home_page_bg_path = PhotoImage(file=r"C:\Users\Nancy\Downloads\bgimage.png")
+        self.other_pages_bg_path = PhotoImage(file=r"C:\Users\Nancy\Downloads\bgotherpg.png")
         
         # constructor creates UI for Pages when excecuted
         # functions for creating each pages
@@ -109,7 +109,7 @@ class TaxCalculatorApp:
         Button(self.page0, text="Login", command=self.go_to_login_page, font=("Arial", 15), padx=15, pady=5, bg="#EECACA", fg="black",activeforeground = "black", activebackground="#EECACA", relief=FLAT).place(x=310,y=350)
         Button(self.page0, text="New User", command=self.go_to_new_user_page, font=("Arial", 15), pady=5, bg="#EECACA", fg="black",activeforeground = "black", activebackground="#EECACA", relief=FLAT).place(x=490,y=350)
 
-        Button(self.page0, text="Home", command=self.go_to_next_page, font=("Arial", 15), bg="#0B001A", fg="white",activeforeground = "white", activebackground="#0B001A", relief=FLAT).place(x=508,y=70)
+        Button(self.page0, text="Home", command=self.go_to_home_page, font=("Arial", 15), bg="#0B001A", fg="white",activeforeground = "white", activebackground="#0B001A", relief=FLAT).place(x=508,y=70)
         Button(self.page0, text="Notice", command=self.show_notice_page, font=("Arial", 15), bg="#0B001A", fg="white",activeforeground = "white", activebackground="#0B001A", relief=FLAT).place(x=591,y=70)
         Button(self.page0, text="About", command=self.show_about, font=("Arial", 15), bg="#0B001A", fg="white",activeforeground = "white", activebackground="#0B001A", relief=FLAT).place(x=681,y=70)
         Button(self.page0, text="FAQ", command=self.show_help_page, font=("Arial", 15), bg="#0B001A", fg="white",activeforeground = "white", activebackground="#0B001A", relief=FLAT).place(x=768,y=70)
@@ -260,6 +260,8 @@ class TaxCalculatorApp:
 
         self.create_navigation_buttons(self.page4, is_final_page=True)
 
+        Button(self.page4, text="Exit", command=self.exit_app, font=("Arial", 15), bg="red", fg="white",activeforeground = "white", activebackground="#0B001A", relief=FLAT).place(x=10,y=552)
+
     # function for creating bg image for other pages
     def create_bg_image(self, parent):
         other_pages_bg_label = Label(parent, image=self.other_pages_bg_path)                # Create a label to hold the background image
@@ -374,13 +376,12 @@ class TaxCalculatorApp:
             messagebox.showwarning("Input Error", "Please provide both email and password.")
             return
 
-        """
         # Validate the email against a list of allowed domains
         if not ( email.endswith('@gmail.com') or email.endswith('@student.mes.ac.in') or
                  email.endswith('@mes.ac.in') or email.endswith('@yahoo.com') or
                  email.endswith('@hotmail.com') or email.endswith('@outlook.com') or email.endswith('@protonmail.com') ):
             messagebox.showerror("Invalid Email", "Please use a valid email address.")
-            return"""
+            return
         
         try:
             # Insert the new user's email and password into the LoginCredentials table
